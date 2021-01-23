@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Movie Time`,
+    description: `A website to select a movie for the night...`,
+    author: `Selim can Kaygun`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,6 +13,35 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+
+      resolve: "gatsby-source-graphql",
+      
+      options: {
+      
+      typeName: "WPGraphql",
+      
+      fieldName: "wpcontent",
+      
+      url: "http://movietime.local/graphql",
+      
+      },
+      
+      },
+      {
+
+        resolve: `gatsby-plugin-google-fonts`,
+        
+        options: {
+        
+        fonts: [`Roboto`, `Oswald`],
+        
+        display: "swap",
+        
+        },
+        
+        },
+    `gatsby-plugin-styled-components`, 
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
