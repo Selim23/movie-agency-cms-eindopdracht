@@ -3,7 +3,7 @@ import {useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
-import {Wrapper, Image, Artist, BottomEdgeDown, BottomEdgeUp} from "./pageStyles/pageStyles"
+import {Wrapper, Image, Artist, BottomEdgeDown, BottomEdgeUp} from "../pageStyles/pageStyles"
 import { COLORS } from "../constants"
 
 const MoviePage = () => {
@@ -50,7 +50,7 @@ const MoviePage = () => {
                     sourceUrl
                     imageFile {
                       childImageSharp{
-                        fluid(quality: 100){
+                        fluid(quality: 50){
                           ...GatsbyImageSharpFluid_withWebp
                         }
                       }
@@ -80,7 +80,7 @@ return<Layout>
             <BottomEdgeUp color={COLORS.BLACK} />
         </div>
         <div className="artists">
-            <h2>Favorite Films</h2>
+            <h2>Favorite Movies</h2>
             <div className="artist-items">
                 {movies.map(({node: {film, slug} }) => (
                     <Artist to={`/${slug}`} key={slug}>
