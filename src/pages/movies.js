@@ -58,6 +58,7 @@ const MoviePage = () => {
                   }
                   
                 }
+                slug
               }
             }
           }
@@ -82,7 +83,7 @@ return<Layout>
             <h2>Favorite Films</h2>
             <div className="artist-items">
                 {movies.map(({node: {film, slug} }) => (
-                    <Artist to={`/${slug}`} key={slug} >
+                    <Artist to={`/${slug}`} key={slug}>
                         <Image fluid={film.image.imageFile.childImageSharp.fluid} alt={movies.altText} ></Image>
                         <div className="artist-info">
                             <p>{film.naam}</p>
